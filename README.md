@@ -1,4 +1,4 @@
-# desafio-js-final
+# Desafio JS Final
 Desafio final do módulo de JavaScript da Groww.
 
 ## Objetivo
