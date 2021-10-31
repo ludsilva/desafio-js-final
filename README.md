@@ -7,3 +7,9 @@ Desenvolver uma solução financeira (sistema bancário).
 ## Especificações
 - O sistema deve simular uma interface de um banco;
 - Deve permitir: login, cadastro de usuário, tela de acesso e transações bancárias.
+
+## Tecnologias utilizadas
+- HTML;
+- CSS;
+- Bootstrap;
+- JavaScript Vanilla.

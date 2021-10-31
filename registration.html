@@ -8,11 +8,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./src/css/main.css">
   <script src="./src/js/dataset.js" type="module"></script>
-  <script src="./src/js/login.js" type="module"></script>
-  <title>Groww Digital Bank - Login</title>
+  <script src="./src/js/registration.js" type="module"></script>
+  <title>Groww Digital Bank - Cadastro</title>
 </head>
 <body>
-  
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"> <i class="fa-solid fa-bank me-3"></i>Groww Bank</a>    
@@ -35,39 +35,50 @@
     </div>
   </nav>
 
-  <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Acesse sua conta</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-2">Seja bem-vinde de volta! &#128522</p>
-    </div>
-    <div class="container-fluid pt-3 mt-2 pb-3">
-      <div class="row content d-flex justify-content-center align">
-        <div class="col-md-5 col-auto">
-          <div class="box shadow bg-white p-4 border-circum">
-            <h3 class="mb-4 text-center fs-1">
-              Login 
-            </h3>
-            <form action="" class="">
-              <div class="form-floating mb-3">
-                <input type="text" class="form-control rounded-0" id="userAccount" placeholder="Exemplo: 123450">
-                <label for="floatingIn">Conta de usuário:</label>
-              </div>  
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-0" id="userPass" placeholder="9876543">
-                <label for="floatingPass">Senha de 6 dígitos:</label>
-              </div>
-              <div class="d-grip gap-3 mb-3">
-                <button type="button" class="btn btn-dark btn-lg border-0 rounded-0" id="buttonIn">Login</button>
-                <button type="button" class="btn btn-dark btn-lg border-0 rounded-0" id="btnNewUser">Cadastrar</button>
-              </div>
-            </form>
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Cadastro de nova conta</h1>
+        <p class="col-lg-10 fs-4"> Cadastre agora sua conta no Groww Bank. </p>
+        <p class="col-lg-10 fs-4">
+          É simples, prático, rápido e sem qualquer tarifa.
+          Junte-se ao futuro, aqui e agora! </p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border-circum bg-light">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="inName" placeholder="Digite seu nome" required>
+            <label for="formGroupExampleInput" class="col-form-label">Nome</label>
           </div>
-        </div>
+          <div class="form-floating mb-3">
+            <input type="email" name="email" id="inEmail" class="form-control" pattern='\w*@\w*\.\w*\.?\w*' placeholder="exemplo@exemplo.com" required>
+            <label for="" class="col-form-label">Email</label>
+          </div>
+          <div class="form-floating mb-1">
+            <input type="text" class="form-control" id="inUserCode" placeholder="Exemplo: 000000" required>
+            <label for="formGroupExampleInput" class="col-form-label">Código Bancário</label>
+          </div>
+          <div class="col-auto mb-2">
+            <span id="passwordHelpInline" class="form-text">
+              O código da conta deverá ser de 6 números.
+            </span>
+          </div>
+          <div class="form-floating mb-1">
+            <input type="password" id="inPassword" class="form-control" placeholder="Senha" aria-describedby="passwordHelpInline" reguired>
+            <label for="inputPassword6" class="col-form-label">Senha</label>
+          </div>
+          <div class="col-auto mb-3">
+            <span id="passwordHelpInline" class="form-text">
+              Deverá ser uma senha numérica de 6 dígitos.
+            </span>
+          </div>
+          <button class="w-100 btn btn-dark btn-lg border-0 rounded-0" type="button" id="buttonIn">Cadastrar</button>
+          <hr class="my-4">
+          <small class="text-muted">Clicando em cadastrar, você concorda com os termos de uso.</small>
+        </form>
       </div>
     </div>
   </div>
-
-  
 
   <footer class="text-center text-white mt-5">
     <div class="container pt-4">
@@ -88,7 +99,7 @@
       <a class="text-dark" href="https://groww.com.br/">Groww</a>
     </div>
   </footer>
-
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
