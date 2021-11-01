@@ -1,4 +1,4 @@
-// Regristro de usuário
+// Registro de usuário
 
 import {dataset} from './dataset.js';
 
@@ -85,4 +85,3 @@ async function verifyUser(){
     }
   }
 };
-

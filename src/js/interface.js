@@ -56,7 +56,7 @@ let toggleBtn = document.getElementById("menu-toggle");
 
 toggleBtn.onclick = () => {element.classList.toggle("toggled");};
 
-/* */
+/*Clear buttons */
 let clearWithdraw = document.getElementById("inputWithdraw");
 document.getElementById("clear").addEventListener('click', () => {
   clearWithdraw.value = '';

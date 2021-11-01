@@ -3,9 +3,6 @@
 // Import do dataset
 import {dataset} from './dataset.js';
 
-//test
-console.info(dataset);
-
 /* Funções */
 
 //Validação do input
