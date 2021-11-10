@@ -1,48 +1,60 @@
-// Login do usuário
+/*  
+  *** Login do usuário *** 
+*/
 
 // Import do dataset
 import {dataset} from './dataset.js';
 
-/* Funções */
+/* *** Funções  *** */
 
 //Validação do input
-let validAccount = document.querySelector("#userAccount");
-let validPassword = document.querySelector("#userPass");
-
-validAccount.addEventListener("keydown", function (e) {
-  if(e.key >= 'a' && e.key <= 'z'){
-    e.preventDefault();
- }
-});
-
-validPassword.addEventListener("keydown", function (e) {
-  if(e.key >= 'a' && e.key <= 'z'){
-    e.preventDefault();
+const validAccount = document.querySelector("#userAccount").addEventListener("keydown", 
+  function (event) {
+    if(event.key >= 'a' && event.key <= 'z'){
+      event.preventDefault();
   }
 });
 
-//Login
-const validateLogin = () => {
-  let user = document.getElementById("userAccount").value;
-  let password = document.getElementById("userPass").value;
+const validPassword = document.querySelector("#userPass").addEventListener("keydown", 
+  function (event) {
+    if(event.key >= 'a' && event.key <= 'z'){
+      event.preventDefault();
+    }
+});
+
+/* Login */
+
+// Receber os valores do form
+const formSubmitedValues = () => {
+  let user = parseInt(document.getElementById("userAccount").value);
+  let password = parseInt(document.getElementById("userPass").value);
+
+  validateLogin(user, password);
+}
+document.getElementById('buttonIn').addEventListener('click', formSubmitedValues, true);
+
+
+// Receber os valores e confirmar se a conta existe
+const validateLogin = (user, password) => {
   let status;
-  let location;
   let confirmUser;
-  let confirmPass;
+  let confirmPassword;
 
-  for (let users of dataset){
-    if (parseInt(user) == users.userAccount){
-      confirmUser = true;
-    } else {
-     status = "Conta não encontrada!";
-    }
-    if (parseInt(password) == users.password){
-      confirmPass = true;     
-    } else {
-      status = "Senha inválida!";
-    }
-  }
-  if (confirmPass == true && confirmUser == true){
+  const checkedUsers = dataset.filter((users) => {
+    users.userAccount == user ? confirmUser = true : status = "Conta não encontrada!"
+  })
+
+  const chekedPasswords = dataset.filter((users) => {
+    users.password == password ? confirmPassword = true : status = "Senha inválida!"
+  })
+  isLoginConfirmed(confirmPassword, confirmUser, status);
+} 
+
+//Confirmar o login
+const isLoginConfirmed = (confirmPassword, confirmUser, status) => {
+  let location;
+
+  if (confirmPassword == true && confirmUser == true){
     status = alert("Login realizado com sucesso!");
     location = window.location = './bank.html';
   } else {
@@ -50,8 +62,7 @@ const validateLogin = () => {
     location = window.location = './index.html';
   }
   return `${status} ${location}`;
-} 
-document.getElementById('buttonIn').addEventListener('click', validateLogin, true);
+}
 
 //Cadastrar new user
 const newUser = () => {
