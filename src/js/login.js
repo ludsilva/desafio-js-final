@@ -37,11 +37,11 @@ const validateLogin = (user, password) => {
   let confirmUser;
   let confirmPassword;
 
-  const checkedUsers = dataset.filter((users) => {
+  dataset.filter((users) => {
     users.userAccount == user ? confirmUser = true : false
   })
 
-  const chekedPasswords = dataset.filter((users) => {
+  dataset.filter((users) => {
     users.password == password ? confirmPassword = true : false
   })
   isLoginConfirmed(confirmPassword, confirmUser);
