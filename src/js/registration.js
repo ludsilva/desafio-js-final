@@ -45,19 +45,14 @@ let cadastro = {
 
 //Registrar usuário
 async function registerUser(){
-  let name = document.getElementById("inName").value;
-  let email = document.getElementById("inEmail").value;
-  let password = document.getElementById("inPassword").value;
-  let newAccount = document.getElementById("inUserCode").value;
+  cadastro.name = document.getElementById("inName").value;
+  cadastro.email = document.getElementById("inEmail").value;
+  cadastro.password = document.getElementById("inPassword").value;
+  cadastro.newAccount = parseInt(document.getElementById("inUserCode").value);
 
-  if(name === '' || email == '' || password == '' || newAccount == ''){
+  if(cadastro.name === '' || cadastro.email === '' || cadastro.password === '' || isNaN(cadastro.newAccount)){
     return alert("Prencha os dados corretamente!")
   }
-
-  cadastro.name = name;
-  cadastro.email = email;
-  cadastro.password = password;
-  cadastro.newAccount = parseInt(newAccount);
   
   await verifyUser(cadastro, dataset);
 };
