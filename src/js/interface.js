@@ -1,53 +1,25 @@
 /* Sidebar buttons */
 
-//Bank Statement
-document.getElementById("btn-statement").addEventListener('click', () => {
-  let displayStatement = document.getElementById("statement").style.display;
-  if (displayStatement != 'block'){
-      document.getElementById("statement").style.display = 'block';
-  } else {
-      document.getElementById("statement").style.display = 'none';
-  }
+const btnTypes = ['statement', 'withdraw', 'deposit', 'transfer'];
+
+const showDivs = btnTypes.filter((btnType) =>{
+  document.getElementById(`btn-${btnType}`).addEventListener('click', () =>{
+    let btnDisplay = document.getElementById(`div-${btnType}`).style.display
+    if (btnDisplay != 'block'){
+      document.getElementById(`div-${btnType}`).style.display = 'block';
+    } else {
+      document.getElementById(`div-${btnType}`).style.display = 'none';
+   }
+  }) 
 });
 
-//Withdraw
-document.getElementById("btn-withdraw").addEventListener('click', () => {
-  let displayWithdraw = document.getElementById("withdraw").style.display;
-  if (displayWithdraw != 'block'){
-      document.getElementById("withdraw").style.display = 'block';
-  } else {
-      document.getElementById("withdraw").style.display = 'none';
-  }
-});
+//Payment and Chat
+const btnUnavailable = ['payment', 'chat'];
 
-//Deposit
-document.getElementById("btn-deposit").addEventListener('click', () => {
-  let displayDeposit = document.getElementById("deposit").style.display;
-  if (displayDeposit != 'block'){
-      document.getElementById("deposit").style.display = 'block';
-  } else {
-      document.getElementById("deposit").style.display = 'none';
-  }
-});
-
-//Payment
-document.getElementById("btn-payment").addEventListener('click', () => {
-  return alert("Função indisponível no momento!");
-});
-
-//Transfer
-document.getElementById("btn-transfer").addEventListener('click', () => {
-  let displayTransfer = document.getElementById("transfer").style.display;
-  if (displayTransfer != 'block'){
-      document.getElementById("transfer").style.display = 'block';
-  } else {
-      document.getElementById("transfer").style.display = 'none';
-  }
-});
-
-//Chat
-document.getElementById("btn-chat").addEventListener('click', () => {
-  return alert("Função indisponível no momento!");
+const showUnavaibleAlert = btnUnavailable.filter((btnType) =>{
+  document.getElementById(`btn-${btnType}`).addEventListener('click', () => {
+    return alert("Função indisponível no momento!");
+  })
 });
 
 /* Toggle */
