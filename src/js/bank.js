@@ -111,4 +111,4 @@ const addRow = (categoria, descricao, saldo) => {
         td_categoria.innerText = categoria;
         td_descricao.innerText = descricao;
         td_saldo.innerText = "R$ " + saldo.toFixed(2);
-}
+};
